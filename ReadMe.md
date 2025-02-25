@@ -28,9 +28,9 @@ This taught me how important it is to understand how KPIs are calculated and und
 
 ## Concrete Statistics of Week 1 vs Week 16 Comparisons:
 
-WPM went from 77.8 to 114.8 (a 47.5% increase)
-Filler_Perc went from 10% to 5.2% (a 48.5% decrease)
-Unique_WPM increased when controlling for time, but it is not easily quantifiable
+WPM went from 77.8 to 114.8 (a 47.5% increase)  
+Filler_Perc went from 10% to 5.2% (a 48.5% decrease)  
+Unique_WPM increased when controlling for time, but it is not easily quantifiable  
 
 ## Limitations, Future Work, and Mistakes
 
@@ -55,31 +55,33 @@ Calculate measurements from the dictionaries for each video.
 
 Each observation is a video, and below is a definition of all the variables:
 
-Video_Number- An index representing the chronological order of recorded videos, ranging from 1 (earliest) to 112 (most recent), used as a proxy for progression over time.
-Date_Recorded- The calendar date that the video was recorded
-Hours_CI_Students- The number of hours spent learning through watching Comprehensible Input for Learned (content not made for native speakers)
-Hours_Reading- The number of hours spent learning through reading
-Hours_Talking- The number of hours spent learning through speaking with Natives
-Hours_Native_Media- The number of hours spent learning through watching native media as a form of Comprehensible Input
-Time_Recorded- The time of day that a video was recorded. Note: if the video is between 12 AM and 3 AM, it was recorded on the next calendar day, but counted as the video for the date listed in Date_Recorded. Sometimes I didn’t have time to record until late at night (the Spanish are a late night culture).
-Length_Minutes- The length in minutes of the video which was recorded
-Total_Words- The total number of words which were transcribed
-Unique_Words- The number of unique words which were transcribed
-Avg_Word_Freq- The average number of times a word was used in the video. Calculated by Total_Words / Unique_Words (inverse of TTR)
-Med_Word_Freq- The median number of times a word was used in the video
-Entropy- Calculation of the entropy based on the word frequency. Used to measure variance. Look at the "Feature_Creation.ipynb" file to understand more
-TTR- The Lexical Diversity (Type-Token Ratio, or TTR) of the video. Used to measure variance. Calculated by Unique_Words / Total_Words (inverse of Avg_Word_Freq)
+1. Video_Number- An index representing the chronological order of recorded videos, ranging from 1 (earliest) to 112 (most recent), used as a proxy for progression over time.  
+2. Date_Recorded- The calendar date that the video was recorded.  
+3. Hours_CI_Students- The number of hours spent learning through watching Comprehensible Input for Learned (content not made for native speakers).  
+4. Hours_Reading- The number of hours spent learning through reading.  
+5. Hours_Talking- The number of hours spent learning through speaking with Natives.  
+6. Hours_Native_Media- The number of hours spent learning through watching native media as a form of Comprehensible Input.  
+7. Time_Recorded- The time of day that a video was recorded. Note: if the video is between 12 AM and 3 AM, it was recorded on the next calendar day, but counted as the video for the date listed in Date_Recorded. Sometimes I didn’t have time to record until late at night (the Spanish are a late night culture).  
+8. Length_Minutes- The length in minutes of the video which was recorded.  
+9. Total_Words- The total number of words which were transcribed.  
+10. Unique_Words- The number of unique words which were transcribed.  
+11. Avg_Word_Freq- The average number of times a word was used in the video. Calculated by Total_Words / Unique_Words (inverse of TTR).  
+12. Med_Word_Freq- The median number of times a word was used in the video  
+13. Entropy- Calculation of the entropy based on the word frequency. Used to measure variance. Look at the "Feature_Creation.ipynb" file to understand more.  
+14. TTR- The Lexical Diversity (Type-Token Ratio, or TTR) of the video. Used to measure variance. Calculated by Unique_Words / Total_Words (inverse of Avg_Word_Freq).  
 
 
 # Structure of the Repo
 
 The Data folder has all the data. Raw_Transcripts are the text files and Processed_Transcripts are json files that store the data dictionary. The “clean_data.csv” is the joined and cleaned dataset, with “transcript_features.csv” and “video_features.csv” representing the calculated features and the hand collected features, respectively.
 
-The Code folder has all the jupyter notebooks with the code I used for the project. Below is what each represents
-Transcript_Cleaner.ipynb - Code that transformed the text files into data dictionaries and saved them as json files
-Feature_Creation.ipynb - Code that loads json files and makes calculations, resulting in “transcript_features.csv”
-Data_Cleaning.ipynb - Code that joins “transcript_features.csv” and “video_features.csv” and cleans the data to prepare for analysis. Results in “clean_data.csv”
-Analysis.ipynb - Code that analyzes “
+The Code folder has all the jupyter notebooks with the code I used for the project. Below is what each represents:
+
+Transcript_Cleaner.ipynb- Code that transformed the text files into data dictionaries and saved them as json files.  
+Feature_Creation.ipynb- Code that loads json files and makes calculations, resulting in “transcript_features.csv”.  
+Data_Cleaning.ipynb- Code that joins “transcript_features.csv” and “video_features.csv” and cleans the data to prepare for analysis. Results in “clean_data.csv”.  
+Analysis.ipynb- Code that analyzes and visualizes the data.  
+Analysis_Weekly.ipynb- Code that groups data into 7 day groups (weeks) and does some calculations. Nothing novel is found.
 
 
-The Visualizations folder has an infographic I made to share this project and its findings and images of the data visualizations I used in that infographic (generated at the end of “Analysis.ipynb”)
+The Visualizations folder has an infographic I made to share this project and its findings and images of the data visualizations I used in that infographic (generated at the end of “Analysis.ipynb”).
